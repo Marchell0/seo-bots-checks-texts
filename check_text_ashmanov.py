@@ -41,7 +41,7 @@ class bot:
             self.navigate(self.clean_text)
             sheet['C' + str(x)].value = self.rating
             sheet['D' + str(x)].value = self.words_count + ' слов'
-            sheet['F' + str(x)].value = self.text_size + ' символов'
+            sheet['E' + str(x)].value = self.text_size + ' символов'
             wb.save('texts.xlsx')
         self.driver.quit()
     
