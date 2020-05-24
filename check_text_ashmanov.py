@@ -58,9 +58,10 @@ class Bot:
             text = sheet['A' + str(x)].value
             self.clean_text = text.replace('_x000D_', '')
             self.navigate()
-            sheet['B' + str(x)].value = self.rating
-            sheet['C' + str(x)].value = self.words_count + ' word(s)'
-            sheet['D' + str(x)].value = self.text_size + ' characters'
+            # Start with C because column B is used by the Glavred
+            sheet['C' + str(x)].value = self.rating
+            sheet['D' + str(x)].value = self.words_count + ' word(s)'
+            sheet['E' + str(x)].value = self.text_size + ' characters'
             wb.save(file)
         self.driver.quit()
     
